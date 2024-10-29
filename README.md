@@ -2,7 +2,7 @@
 
 ## Video demo
 
-[![Video Thumbnail]](video/recording.mp4)
+[![Video Thumbnail](image/button/setting-button.png)](video/recording.mp4)
 
 ## running
 
