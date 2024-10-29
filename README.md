@@ -2,7 +2,9 @@
 
 ## Video demo
 
-<source src="video/recording.mp4" type="mp4">
+<video width="800" height="1000" controls>
+    <source src="video/recording.mp4" type="mp4">
+</video>
 
 ## running
 
