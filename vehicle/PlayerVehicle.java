@@ -14,6 +14,7 @@ public class PlayerVehicle {
     private int width, height;
     private int xVelocity, yVelocity;
     private BufferedImage sliderImage;
+    private double heSo;
 
     public PlayerVehicle(String imagePath, int x, int y, int width, int height, int xVelocity, int yVelocity) {
         this.x = x;
@@ -28,6 +29,7 @@ public class PlayerVehicle {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.heSo = 1;
     }
 
     public void moveUp() {
@@ -94,5 +96,9 @@ public class PlayerVehicle {
 
     public int getHeight() {
         return height;
+    }
+
+    public void setHeSo(double heSo) {
+        this.heSo = heSo;
     }
 }

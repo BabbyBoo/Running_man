@@ -62,6 +62,7 @@ public class ComputerVehicle {
             x = random.nextDouble(200) + 500;
             reset(x, 50, 30, 30, -1, 2, 3);
         }
+        ////// thêm loại xe đi ngang
     }
 
     // Phương thức di chuyển của ComputerVehicle
@@ -69,6 +70,7 @@ public class ComputerVehicle {
         boolean moveLeft = false;
         boolean moveRight = false;
         boolean moveDown = false;
+        // di chuyển với người đi ngang và xe oto
         if (type != 0) {
             for (int i = 0; i < comVehicles.size(); i++) {
                 if (i == j)
@@ -118,6 +120,7 @@ public class ComputerVehicle {
             return;
         }
 
+        // Phương thức di chuyển với xe máy
         double yV = 0;
         for (int i = 0; i < comVehicles.size(); i++) {
             if (i == j)
@@ -152,29 +155,27 @@ public class ComputerVehicle {
         if (x < 180)
             moveRight = true;
 
-        if (moveDown) {
-            yVelocity = yV;
-            xVelocity = 0;
-        }
-        if (moveLeft && moveRight) {
+        if (moveDown || (moveLeft && moveRight)) {
             yVelocity = yV;
             xVelocity = 0;
         } else if (moveLeft) {
             xVelocity = -1;
             yVelocity = -0.5;
+            /////// thay hình ảnh
         } else if (moveRight) {
             xVelocity = 1;
             yVelocity = -0.5;
+            //////// thay hình ảnh
         } else {
             if (xVelocity != 0 && yVelocity >= -0.5) {
                 xVelocity = 0;
                 yVelocity = -1.5;
+                /////// Quay trờ lại hình cũ
             }
         }
     }
 
-    public void move() {
-
+    public void move() { ///////// thêm hệ số
         if (type < 2) {
             if (x < 180 && x + width < 580) {
                 xVelocity = 0;

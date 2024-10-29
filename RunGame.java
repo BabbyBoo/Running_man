@@ -62,7 +62,9 @@ public class RunGame extends JFrame implements KeyListener {
                 checkScore();
             }
         });
+        /////// thêm màn hình trước khi bắt đầu
         timer.start();
+        /////// thay đổi hệ số của comVehicle và playervehicle
 
         setVisible(true);
     }
@@ -122,6 +124,7 @@ public class RunGame extends JFrame implements KeyListener {
                 addVehicle();
             }
         }
+        /////// có thể thay điểm chạy theo thời gian
     }
 
     // Phương thức di chuyển xe của người chơi dựa trên phím
@@ -140,6 +143,7 @@ public class RunGame extends JFrame implements KeyListener {
         }
         if (playerVehicle.move(comVehicle)) {
             System.exit(0);
+            /////// thêm màn hình khi kết thúc chương trình
         }
     }
 
