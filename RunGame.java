@@ -19,7 +19,7 @@ public class RunGame extends JFrame implements KeyListener {
     private LinkedList<ComputerVehicle> comVehicle = new LinkedList<>();
     private Map[] maps = new Map[22];
     private String[] imgPath = { "./Images/mb.png", "./Images/mb1.png", "./Images/mb2.png",
-            "./Images/car3.png", "./Images/car4.png", "./Images/car5.png", "./Images/car6.png",
+            "./Images/car1.png", "./Images/car2.png", "./Images/car5.png", "./Images/car6.png",
             "./Images/hat1.png", "./Images/hat2.png", "./Images/hat3.png", "./Images/hat4.png", "./Images/hat5.png" };
 
     private boolean upPressed = false;

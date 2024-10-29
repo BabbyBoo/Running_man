@@ -1,4 +1,8 @@
-# Running hehehe
+# Running man
+
+## Video demo
+
+<source src="video/recording.mp4" type="mp4">
 
 ## running
 
@@ -8,10 +12,10 @@ git commit -m "commit"
 
 git push -u origin main
 
-## hehehe
+## Tốc độ
 
-tốc độ màn hình : (0, 3) 
+tốc độ màn hình : (0, 2) -> chỉnh tốc độ tăng dần -> tốc độ các xe phía dưới tăng dần theo
 tốc độ người chơi : (1, 0), (-1, 0)
-tốc độ xe đi chậm : (0, 1), (0, 2)
-tốc độ xe đi nhanh : (5, 0), (5, -1), (5, -2)
-tốc độ người đi ngang : (5, 3)
+tốc độ xe đi chậm : (0, 1), (0, 0)
+tốc độ xe đi nhanh : (1, 0), (1, -1), (1, -2)
+tốc độ người đi ngang : (5, 2)
