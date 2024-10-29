@@ -47,20 +47,20 @@ public class ComputerVehicle {
             // xe máy
             x = 180 + random.nextInt(10) * 44;
             v = -2 + random.nextDouble(1);
-            reset(x, 1000, 60, 150, 0, v, 0);
+            reset(x, 1000, 50, 100, 0, v, 0);
         } else if (type == 1) {
             // oto
             x = 180 + random.nextInt(3) * 150 + random.nextInt(40);
             v = 0.3 + random.nextDouble(1) * 0.5;
-            reset(x, -150, 100, 150, 0, v, 1);
+            reset(x, -150, 80, 150, 0, v, 1);
         } else if (type == 2) {
             // người qua đường bên trái
             x = random.nextDouble(200) + 100;
-            reset(x, -50, 50, 50, 1, 2, 2);
+            reset(x, -50, 30, 30, 1, 2, 2);
         } else {
             // người qua đường bên phải
             x = random.nextDouble(200) + 500;
-            reset(x, 50, 50, 50, -1, 2, 3);
+            reset(x, 50, 30, 30, -1, 2, 3);
         }
     }
 
@@ -78,7 +78,9 @@ public class ComputerVehicle {
                 if (x - 10 > cV.getX() + cV.getWidth() ||
                         x + width + 10 < cV.getX() ||
                         y - 20 > cV.getY() + cV.getHeight() ||
-                        y + height + 20 < cV.getY()) {
+                        y + height + 20 < cV.getY() ||
+                        (type == 2 && cV.yVelocity == 2 &&
+                                (x > cV.getX() + cV.getWidth() || x + width < cV.getX()))) {
                     if (type == 2)
                         xVelocity = 1;
                     else if (type == 3)
@@ -112,7 +114,7 @@ public class ComputerVehicle {
                 } else if (x < cV.getX() + cV.getWidth() + 10 && x + width > cV.getX() + cV.getWidth()) {
                     moveRight = true;
                 } else if (x >= cV.getX() && x + width <= cV.getX() + cV.getWidth()) {
-                    if (x < 400)
+                    if (x > 400)
                         moveLeft = true;
                     else
                         moveRight = true;

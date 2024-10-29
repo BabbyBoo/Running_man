@@ -18,9 +18,9 @@ public class RunGame extends JFrame implements KeyListener {
     private int numVehicle = 5;
     private LinkedList<ComputerVehicle> comVehicle = new LinkedList<>();
     private Map[] maps = new Map[22];
-    private String[] imgPath = { "./Images/mb.png", "./Images/mb1.png", "./Images/mb2.png",
-            "./Images/car1.png", "./Images/car2.png", "./Images/car5.png", "./Images/car6.png",
-            "./Images/hat1.png", "./Images/hat2.png", "./Images/hat3.png", "./Images/hat4.png", "./Images/hat5.png" };
+    private String[] imgPath = { "./images/mb.png", "./images/mb1.png", "./images/mb2.png",
+            "./images/car5.png", "./images/car6.png", "./images/car1.png", "./images/car2.png",
+            "./images/hat1.png", "./images/hat2.png", "./images/hat3.png", "./images/hat4.png", "./images/hat5.png" };
 
     private boolean upPressed = false;
     private boolean downPressed = false;
@@ -38,7 +38,7 @@ public class RunGame extends JFrame implements KeyListener {
         setLocationRelativeTo(null);
 
         // Khởi tạo PlayerVehicle
-        playerVehicle = new PlayerVehicle(imgPath[0], 600, 450, 60, 150, 1, 0);
+        playerVehicle = new PlayerVehicle(imgPath[0], 600, 450, 40, 100, 1, 0);
 
         // Khởi tạo comVehicle
         addVehicle();
@@ -95,12 +95,12 @@ public class RunGame extends JFrame implements KeyListener {
     public void addVehicle() {
         while (comVehicle.size() < numVehicle) {
             int type = random.nextInt(10);
-            int k = random.nextInt(2) + 1;
+            int k = random.nextInt(4) + 1;
             if (type < 7)
                 type = 0;
             else if (type < 9) {
                 type = 1;
-                k = random.nextInt(4) + 3;
+                k = random.nextInt(2) + 5;
             } else {
                 type = random.nextInt(2) + 2;
                 k = random.nextInt(5) + 7;
