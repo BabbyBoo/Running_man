@@ -2,7 +2,7 @@
 
 ## Video demo
 
-![Video GIF](https://s3.ezgif.com/tmp/ezgif-3-6fa9ebd906.gif)
+![ok](https://github.com/user-attachments/assets/e9b952fa-a036-41d5-a125-0a91cde4bbe6)
 
 ## running
 
