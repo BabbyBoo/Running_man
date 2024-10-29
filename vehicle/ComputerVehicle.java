@@ -78,15 +78,28 @@ public class ComputerVehicle {
                 if (x - 10 > cV.getX() + cV.getWidth() ||
                         x + width + 10 < cV.getX() ||
                         y - 20 > cV.getY() + cV.getHeight() ||
-                        y + height + 20 < cV.getY() ||
-                        (type == 2 && cV.yVelocity == 2 &&
-                                (x > cV.getX() + cV.getWidth() || x + width < cV.getX()))) {
+                        y + height + 20 < cV.getY()) {
                     if (type == 2)
                         xVelocity = 1;
                     else if (type == 3)
                         xVelocity = -1;
                     else
                         yVelocity = 1;
+                    continue;
+                }
+                if (type >= 2 && cV.yVelocity == 2 &&
+                        (y > cV.getY() + cV.getHeight() || y + height < cV.getY() ||
+                                x > cV.getX() + cV.getWidth() || x + width < cV.getX())) {
+                    if (type == 2)
+                        xVelocity = 1;
+                    else if (type == 3)
+                        xVelocity = -1;
+                    continue;
+                }
+                if (type == 1 && cV.xVelocity == 0 &&
+                        (y > cV.getY() + cV.getHeight() || y + height < cV.getY() ||
+                                x > cV.getX() + cV.getWidth() || x + width < cV.getX())) {
+                    yVelocity = 1;
                     continue;
                 }
                 if (x - 10 > cV.getX() + cV.getWidth() ||
