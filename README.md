@@ -2,7 +2,7 @@
 
 ## Video demo
 
-[![Watch the video](image/start_button.png)](https://s3.ezgif.com/tmp/ezgif-3-6fa9ebd906.gif?fbclid=IwY2xjawGNjpJleHRuA2FlbQIxMAABHR6ImLyeMOpsVRqhDuhSd09-SDsC0HeZkomgpwpIyE0RbtyJUnrNzAI7bg_aem_GwiwlBF2NBZ4ysmAlZbbCQ)
+![Video GIF](https://s3.ezgif.com/tmp/ezgif-3-6fa9ebd906.gif)
 
 ## running
 
