@@ -62,10 +62,10 @@ public class PlayerVehicle {
                     x + width > comVehicle.get(i).getX() &&
                     y < comVehicle.get(i).getY() + comVehicle.get(i).getHeight() &&
                     y + height > comVehicle.get(i).getY()) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     // Vẽ xe người chơi

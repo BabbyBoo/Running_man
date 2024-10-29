@@ -87,27 +87,28 @@ public class ComputerVehicle {
                         yVelocity = 1;
                     continue;
                 }
+                if (type == 1 &&
+                        (x > cV.getX() + cV.getWidth() || x + width < cV.getX())) {
+                    yVelocity = 1;
+                    continue;
+                }
+
                 if (type >= 2 && cV.yVelocity == 2 &&
-                        (y > cV.getY() + cV.getHeight() || y + height < cV.getY() ||
-                                x > cV.getX() + cV.getWidth() || x + width < cV.getX())) {
+                        (y > cV.getY() + cV.getHeight() || y + height < cV.getY())) {
                     if (type == 2)
                         xVelocity = 1;
                     else if (type == 3)
                         xVelocity = -1;
                     continue;
                 }
-                if (type == 1 && cV.xVelocity == 0 &&
-                        (y > cV.getY() + cV.getHeight() || y + height < cV.getY() ||
-                                x > cV.getX() + cV.getWidth() || x + width < cV.getX())) {
-                    yVelocity = 1;
-                    continue;
-                }
+
                 if (x - 10 > cV.getX() + cV.getWidth() ||
                         x + width + 10 < cV.getX() ||
                         y - 20 > cV.getY() + cV.getHeight() ||
                         y + height + 20 < cV.getY()) {
                     continue;
                 }
+
                 if (type >= 2)
                     xVelocity = 0;
                 else
@@ -116,6 +117,8 @@ public class ComputerVehicle {
             }
             return;
         }
+
+        double yV = 0;
         for (int i = 0; i < comVehicles.size(); i++) {
             if (i == j)
                 continue;
@@ -124,13 +127,16 @@ public class ComputerVehicle {
             if (y < cV.getY() + cV.getHeight() + 100 && y > cV.getY() && type == 0) {
                 if (x < cV.getX() && x + width > cV.getX() - 10) {
                     moveLeft = true;
+                    yV = Math.max(yV, cV.getYVelocity());
                 } else if (x < cV.getX() + cV.getWidth() + 10 && x + width > cV.getX() + cV.getWidth()) {
                     moveRight = true;
+                    yV = Math.max(yV, cV.getYVelocity());
                 } else if (x >= cV.getX() && x + width <= cV.getX() + cV.getWidth()) {
                     if (x > 400)
                         moveLeft = true;
                     else
                         moveRight = true;
+                    yV = Math.max(yV, cV.getYVelocity());
                 }
             }
 
@@ -146,8 +152,12 @@ public class ComputerVehicle {
         if (x < 180)
             moveRight = true;
 
-        if (moveDown || (moveLeft && moveRight)) {
-            yVelocity = 1.8;
+        if (moveDown) {
+            yVelocity = yV;
+            xVelocity = 0;
+        }
+        if (moveLeft && moveRight) {
+            yVelocity = yV;
             xVelocity = 0;
         } else if (moveLeft) {
             xVelocity = -1;

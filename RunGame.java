@@ -139,7 +139,7 @@ public class RunGame extends JFrame implements KeyListener {
             playerVehicle.moveRight();
         }
         if (playerVehicle.move(comVehicle)) {
-            // System.exit(0);
+            System.exit(0);
         }
     }
 
