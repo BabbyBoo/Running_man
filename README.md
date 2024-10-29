@@ -2,9 +2,7 @@
 
 ## Video demo
 
-<video width="800" height="1000" controls>
-    <source src="video/recording.mp4" type="mp4">
-</video>
+[![Video Thumbnail]](video/recording.mp4)
 
 ## running
 
